@@ -11,7 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Postlists />}/>
         <Route path="/posts/:id" element={<Post />}/>
-        <Route path="/new" element={<AddPost />}/>
+        <Route path="/posts/:id/add" element={<AddPost />}/>
+        <Route path="*" element={<h1>Error 404</h1>} />
       </Routes>
     </div>
   )
