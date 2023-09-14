@@ -1,7 +1,9 @@
+import { AddPost } from "./AddPost";
+
 export const PostLists = () => {
     return(
         <div>
-            <h2>Post Lists</h2>
+            <AddPost />
         </div>
     );
 };

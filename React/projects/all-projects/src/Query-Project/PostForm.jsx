@@ -5,35 +5,30 @@ import { useState } from "react";
  * @returns {JSX.Element} The rendered form component.
  */
 export const PostForm = () => {
-    const [post, setPost] = useState({
-        title: '',
-        content: '',
-    });
 
-    /**
-     * Handles changes in the input fields.
-     * @param {Event} event - The input change event.
-     */
+    const[post, setPost] = useState({
+        title: "",
+        content: "",
+    });  
+    
     const handleChangeInput = (event) => {
-        const { name, value } = event.target;
-        setPost((prevPost) => ({
-            ...prevPost,
-            [name]: value,
-        }));
+        event.preventDefault()
+        setPost({
+            ...post,
+            [event.target.name]: event.target.value,
+        });
     };
 
-    /**
-     * Handles form submission.
-     * @param {Event} event - The form submit event.
-     */
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(post);
         setPost({
-            title: '',
-            content: '',
-        });
+            title: "",
+            content: "",
+        }); // Clear the form
     };
+
+    console.log(post);
 
     /**
      * Generates a div element containing a label and an input field.
@@ -42,22 +37,18 @@ export const PostForm = () => {
      */
     const Field = ({ label }) => (
         <div>
-            <label htmlFor={label.toLowerCase()}>{label}</label>
-            <input
-                onChange={handleChangeInput}
-                type="text"
-                name={label.toLowerCase()}
-                value={post[label.toLowerCase()]}
-            />
+            <label htmlFor={label.toLowerCase()}
+            >{label}</label>
+            <input onChange={handleChangeInput} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()]}/>
         </div>
     );
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <Field label="Title" />
                 <Field label="Content" />
-                <button type="submit">Create</button>
+                <button type="submit" onClick={handleSubmit}>Create</button>
             </form>
         </div>
     );
