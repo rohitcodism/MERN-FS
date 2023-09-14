@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { Postlists } from "./Postlists"
 import { Post } from "./Post"
-import { AddPost } from "./AddPost"
+import { AddPost } from "./EditPost"
 
 function App() {
 

@@ -22,13 +22,20 @@ const ContentField = ({ label }) => {
     );
 };
 
-export const PostForm = () => {
+export const PostForm = ({post, setPost}) => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(post);
+        setPost({ Title: "", Content: "" });
+    };
 
     return (
         <div>
             <form style={{ width: "100%" }}>
                 <ContentField label={"Title"} />
                 <ContentField label={"Content"}/>
+                <button onClick={handleSubmit}>Create</button>
             </form>
         </div>
     )
