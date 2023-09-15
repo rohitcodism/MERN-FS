@@ -4,38 +4,40 @@ import { useState } from "react";
  * @param {string} label - The label for the form field.
  * @returns {JSX.Element} - The rendered form field.
  */
-const ContentField = ({ label }) => {
+
+export const PostForm = ({ onSubmit }) => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(post);
+        setPost({ Title: "", Content: "" });
+        console.log(post);
+    };
 
     const [post, setPost] = useState({ Title: "", Content: "" })
-
+    
     const handleChange = (e) => {
         setPost({ ...post, [e.target.name]: e.target.value });
     };
 
     console.log(post)
 
-    return (
-        <div>
-            <label htmlFor="title">{label}</label>
-            <input onChange={handleChange} type="text" name={label} value={post[label]}/>
-        </div>
-    );
-};
-
-export const PostForm = ({post, setPost}) => {
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(post);
-        setPost({ Title: "", Content: "" });
+    const ContentField = ({ label }) => {
+    
+        return (
+            <div>
+                <label htmlFor="title">{label}</label>
+                <input onChange={handleChange} type="text" name={label} value={post[label]}/>
+            </div>
+        );
     };
 
     return (
         <div>
-            <form style={{ width: "100%" }}>
+            <form style={{ width: "100%" }} onSubmit={handleSubmit}>
                 <ContentField label={"Title"} />
                 <ContentField label={"Content"}/>
-                <button onClick={handleSubmit}>Create</button>
+                <button>Create</button>
             </form>
         </div>
     )
