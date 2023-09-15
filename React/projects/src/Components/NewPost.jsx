@@ -11,7 +11,7 @@ const NewPost = () => {
 
     const handleAddPost = (post) => {
         createPostMutation.mutate({
-            id: 3,
+            id: crypto.randomUUID(),
             ...post
         })  
     };

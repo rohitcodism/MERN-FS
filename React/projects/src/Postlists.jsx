@@ -11,7 +11,6 @@ export const Postlists = () => {
         queryKey: ["posts"],
         queryFn :  fetchPosts
     })
-    console.log(posts)
 
     if(isLoading) return(<h1>Loading...</h1>)
     if(isError) return(<pre>Error!!</pre>)
