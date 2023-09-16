@@ -1,43 +1,63 @@
+
+
 import { useState } from "react";
+
 /**
- * Renders a form field with a label and an input element.
- * @param {string} label - The label for the form field.
- * @returns {JSX.Element} - The rendered form field.
+ * Renders a form for creating a post.
+ * @param {Object} props - The component props.
+ * @param {Function} props.onSubmit - A callback function that will be called when the form is submitted. It takes a single argument, which is the post object containing the input values.
+ * @returns {JSX.Element} The rendered component.
  */
+export const PostForm = ({ onSubmit, initialValue }) => {
+    console.log(initialValue);
+    const [inputValues, setInputValues] = useState({ Title: initialValue.Title || "", Content: initialValue.Content || "" });
 
-export const PostForm = ({ onSubmit }) => {
-
+    /**
+     * Handles the form submission.
+     * @param {Event} e - The form submission event.
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
+        const post = { ...inputValues };
         onSubmit(post);
-        console.log(post);
+        setInputValues({ Title: "", Content: "" }); // Reset input values after submission
     };
 
-    const [post, setPost] = useState({ Title: "", Content: "" })
-    
+    /**
+     * Handles the input change.
+     * @param {Event} e - The input change event.
+     */
     const handleChange = (e) => {
-        setPost({ ...post, [e.target.name]: e.target.value });
-    };
-
-    console.log(post)
-
-    const ContentField = ({ label }) => {
-    
-        return (
-            <div>
-                <label htmlFor="title">{label}</label>
-                <input onChange={handleChange} type="text" name={label} value={post[label]}/>
-            </div>
-        );
+        const { name, value } = e.target;
+        setInputValues((prevInputValues) => ({
+            ...prevInputValues,
+            [name]: value,
+        }));
     };
 
     return (
         <div>
             <form style={{ width: "100%" }} onSubmit={handleSubmit}>
-                <ContentField label={"Title"} />
-                <ContentField label={"Content"}/>
-                <button>Create</button>
+                <div>
+                    <label htmlFor="Title">Title</label>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        name="Title"
+                        value={inputValues.Title}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="Content">Content</label>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        name="Content"
+                        value={inputValues.Content}
+                    />
+                </div>
+                <button type="submit">Create</button>
             </form>
         </div>
-    )
-}
+    );
+};

@@ -1,12 +1,20 @@
-import React from 'react'
 import { PostForm } from './PostForm'
-import { useMutation } from '@tanstack/react-query'
+import { QueryClient, useMutation } from '@tanstack/react-query'
 import { createPost } from '../API/Posty'
 
 const NewPost = () => {
 
+    const queryClient = new QueryClient();
+
     const createPostMutation = useMutation({
         mutationFn: createPost,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["posts"] });
+            console.log("Success!!");
+            queryClient.refetchQueries({queryKey: ["posts"]});
+            console.log("Data re-fetched !!")
+        },
+        refetchOnWindowFocus: true,
     });
 
     const handleAddPost = (post) => {
@@ -19,7 +27,7 @@ const NewPost = () => {
     return (
         <div>
             <h1>Add new post</h1>
-            <PostForm onSubmit={handleAddPost} />
+            <PostForm onSubmit={handleAddPost} initialValue={{}} />
         </div>
     )
 }
