@@ -1,9 +1,17 @@
-import React from 'react'
+'use client';
 
-const page = () => {
+import { useRouter } from 'next/navigation';
+
+const Page = () => {
+
+  const router = useRouter();
+
   return (
-    <div>page</div>
+    <div>
+      Home route
+      <button onClick={() => router.push("/Dashboard")}>Users</button>
+    </div>
   )
 }
 
-export default page;
+export default Page;
