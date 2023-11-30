@@ -1,21 +1,23 @@
 'use client'
 
-import { useRouter, useSelectedLayoutSegments } from 'next/navigation'
+import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams, useSelectedLayoutSegments } from 'next/navigation'
 import React from 'react'
 
 const Dashboard = () => {
 
+    const searchParams = useSearchParams();
+    console.log(`Current Search Params : ${searchParams}`);
+    const pathName = usePathname();
+    console.log(`Current Pathname : ${pathName}`);
     const router  = useRouter();
 
-    const segment = useSelectedLayoutSegments();
-    console.log(segment);
-
     return (
-        <div className='pl-10'>
+        <>
             <h1 className='text-2xl text-center'>Dashboard Route</h1>
-            <button onClick={() => {router.push("/home")}} className='text-center bg-yellow-500 rounded-lg p-4 ml-32'><h1>Back to home page</h1></button>
-            <button onClick={() => {router.push("/home/contacts")}} className='text-center bg-yellow-500 rounded-lg p-4 ml-32'><h1>Go to contacts page</h1></button>
-        </div>
+            <button onClick={() => {router.push("/home", {scroll : false})}} className='text-center bg-yellow-500 rounded-lg p-4 ml-32'>Back to home page</button>
+            <Link href='/home/contacts' scroll={false} >Go to Contacts page thorough link</Link>
+        </>
     )
 }
 
