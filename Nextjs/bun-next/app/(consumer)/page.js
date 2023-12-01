@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import Dashboard from '../home/dashboard/page.jsx'
+import Dashboard from './home/dashboard/page.jsx'
 
 export default function Home() {
     return (
@@ -31,13 +31,13 @@ export default function Home() {
                         <Link href="/user">User</Link>
                     </li>
                     <li>
-                        <Link href="/about">About</Link>
+                        <Link href="/item">Item</Link>
                     </li>
                 </ul>
             </nav>
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}>
                 <Dashboard />
-            </Suspense>
+            </Suspense> */}
         </div>
     )
 }

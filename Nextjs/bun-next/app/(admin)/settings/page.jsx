@@ -9,7 +9,7 @@ const Settings = () => {
 
     return (
         <div className='flex flex-col justify-center items-center mt-4'>
-            <h1 className='text-3xl font-bold'>Settings</h1>
+            <h1 className='text-3xl font-bold'> This is Settings under admin route group</h1>
             <div
                 className='
                     flex
