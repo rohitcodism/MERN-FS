@@ -15,7 +15,7 @@ const Dashboard = () => {
     return (
         <>
             <h1 className='text-2xl text-center'>Dashboard Route</h1>
-            <button onClick={() => {router.push("/home", {scroll : false})}} className='text-center bg-yellow-500 rounded-lg p-4 ml-32'>Back to home page</button>
+            <button onClick={() => {router.push("/home")}} className='text-center bg-yellow-500 rounded-lg p-4 ml-32'>Back to home page</button>
             <Link href='/home/contacts' scroll={false} >Go to Contacts page thorough link</Link>
         </>
     )
