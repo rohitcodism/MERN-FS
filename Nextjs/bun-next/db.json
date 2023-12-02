@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "topic": "Programming",
+            "slug": "introduction-to-programming"
+        },
+        {
+            "id": 2,
+            "topic": "Web Development",
+            "slug": "building-a-web-application"
+        },
+        {
+            "id": 3,
+            "topic": "Machine Learning",
+            "slug": "machine-learning-basics"
+        },
+        {
+            "id": 4,
+            "topic": "Data Science",
+            "slug": "data-science-for-beginners"
+        },
+        {
+            "id": 5,
+            "topic": "Artificial Intelligence",
+            "slug": "ai-fundamentals"
+        },
+        {
+            "id": 6,
+            "topic": "Cybersecurity",
+            "slug": "cybersecurity-essentials"
+        },
+        {
+            "id": 7,
+            "topic": "Software Engineering",
+            "slug": "software-engineering-principles"
+        },
+        {
+            "id": 8,
+            "topic": "UX/UI Design",
+            "slug": "user-experience-and-user-interface-design"
+        },
+        {
+            "id": 9,
+            "topic": "Product Management",
+            "slug": "product-management-101"
+        },
+        {
+            "id": 10,
+            "topic": "Digital Marketing",
+            "slug": "digital-marketing-strategies"
+        }
+    ]
+}
