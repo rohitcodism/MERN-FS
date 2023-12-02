@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link';
 
 const Shop = () => {
     return (
@@ -8,7 +9,9 @@ const Shop = () => {
                 text-4xl
             '
         >
-            Item route under Consumer Group 
+            <h1>Blog route under Consumer Group</h1>
+            <br />
+            <Link href="/blogs/30">Go to specific blog</Link>
         </div>
     )
 }
