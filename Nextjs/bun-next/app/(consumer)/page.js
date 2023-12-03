@@ -1,8 +1,4 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { Suspense } from 'react'
-import Dashboard from './home/dashboard/page.jsx'
-import Loading from './loading.jsx/index.js'
 
 export default function Home() {
 
