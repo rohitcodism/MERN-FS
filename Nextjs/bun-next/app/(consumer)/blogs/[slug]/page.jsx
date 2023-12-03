@@ -6,6 +6,9 @@ export const dynamicParams = false;
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
+
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
     const posts = await fetch('http://127.0.0.1:4000/data').then((res) => res.json());
     console.log(posts);
 

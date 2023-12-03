@@ -2,17 +2,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import Dashboard from './home/dashboard/page.jsx'
+import Loading from './loading.jsx/index.js'
 
 export default function Home() {
+
     return (
         <div
             style={{
                 display: "flex",
+                flexDirection: "column",
                 justifyContent: 'center',
-                width: "100%"
+                alignItems : 'center',
+                width: "100%",
+                textAlign: "center",
             }}
         >
             <h3>Main Page</h3>
+            <br />
             <nav
                 style={{
                     width: "50%",
@@ -35,9 +41,7 @@ export default function Home() {
                     </li>
                 </ul>
             </nav>
-            {/* <Suspense fallback={null}>
-                <Dashboard />
-            </Suspense> */}
+            <br />
         </div>
     )
 }

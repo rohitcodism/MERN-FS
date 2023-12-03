@@ -18,6 +18,8 @@ const Home = () => {
             <button onClick={() => {router.push("/item")}}>Go to Item</button>
             <Link href="/item">Go tp shop through Link</Link>
             <Link href="/home/dashboard">Go to Dashboard through Link</Link>
+            <br />
+            <br />
         </div>
     )
 }

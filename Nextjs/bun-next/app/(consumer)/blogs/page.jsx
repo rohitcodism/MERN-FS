@@ -11,7 +11,7 @@ const Shop = () => {
         >
             <h1>Blog route under Consumer Group</h1>
             <br />
-            <Link href="/blogs/30">Go to specific blog</Link>
+            <Link href="/blogs/ai-fundamentals">Go to specific blog</Link>
         </div>
     )
 }
