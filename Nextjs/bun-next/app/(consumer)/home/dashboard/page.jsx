@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    const posts = await fetch('http://127.0.0.1:4000/data').then((res) => res.json());
+    const posts = await fetch('http://127.0.0.1:4000/datam').then((res) => res.json());
     console.log(posts);
 
     return posts.map((post) => ({
