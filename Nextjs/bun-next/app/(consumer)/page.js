@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
             }}
         >
             <h3>Main Page</h3>
+            <br />
             <br />
             <nav
                 style={{
