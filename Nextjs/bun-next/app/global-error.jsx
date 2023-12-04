@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 
-const GlobalError = () => {
+const GlobalError = ({error, reset}) => {
     return (
         <html>
             <body>
@@ -18,6 +18,7 @@ const GlobalError = () => {
             '
                 >
                     You have encountered a Global Error bro !!!
+                    <button className='bg-orange-600 text-black font-bold text-2xl p-2 w-60 rounded-md' onClick={() => reset()}>Try Again</button>
                 </div>
             </body>
         </html>
