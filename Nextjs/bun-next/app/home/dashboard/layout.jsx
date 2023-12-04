@@ -1,18 +1,34 @@
 import React, { Suspense } from 'react'
-import Loading from '../../../loading';
 
-const DashboardLayout = ({children}) => {
+const DashboardLayout = ({children, team, login, analytics}) => {
+
+    const loggedIn = true;
+
     return (
         <div
             className='
                 text-center
+                flex
+                flex-col
+                items-center
+                justify-center
+                w-full
+                gap-8
             '
         >
             <h1>This is the Dashboard Layout</h1>
-            <br />
-            <Suspense fallback={<Loading />} >
-                {children}
-            </Suspense>
+            {children}
+            <div
+                className='
+                    flex
+                    items-center
+                    justify-center
+                    w-full
+                    h-full
+                '
+            >
+                {loggedIn ? [team, analytics] : login }
+            </div>
         </div>
     )
 }

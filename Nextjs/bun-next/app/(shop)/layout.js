@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <h1 className='text-2xl text-center mb-4'>This is under Shop layout</h1>
+                <h1 className='text-2xl text-center mb-4'>This is under Shop layout group.</h1>
                 {children}
             </body>
         </html>
