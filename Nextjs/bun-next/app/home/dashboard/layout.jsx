@@ -1,8 +1,14 @@
+'use client'
+import ToggleButton from '@/app/components/Toggle';
+import { useSelectedLayoutSegments } from 'next/navigation';
 import React, { Suspense } from 'react'
 
-const DashboardLayout = ({children, team, login, analytics}) => {
+const DashboardLayout = ({ children, team, login, analytics }) => {
 
-    const loggedIn = true;
+    const layoutSegments = useSelectedLayoutSegments('team')
+    console.log(layoutSegments);
+
+    let loggedIn = true;
 
     return (
         <div
